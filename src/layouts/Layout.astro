@@ -78,7 +78,7 @@ if (database.Cover) {
         }
       </header>
 
-      <div>
+      <div class="site-background">
         <main>
           <div class="content">
             <header>
@@ -159,7 +159,7 @@ if (database.Cover) {
     order: 1;
     width: 300px;
     padding: 20px 20px;
-    background-color: #f4f4f4;
+    /* background-color: #f4f4f4; */
   }
   @media (max-width: 640px) {
     aside {
@@ -444,5 +444,14 @@ if (database.Cover) {
     content: '';
     display: inline-block;
     min-height: 0.9rem;
+  }
+
+  .site-background {
+    background: url(/src/images/backgrounds/marble.jpg) no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    background-color: rgba(255,255,255,0.65);
+    background-blend-mode: overlay;
   }
 </style>
