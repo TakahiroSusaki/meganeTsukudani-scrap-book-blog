@@ -6,6 +6,7 @@ on:
   workflow_dispatch:
 
 env:
+  CUSTOM_DOMAIN: ${{ vars.CUSTOM_DOMAIN }}
   DATABASE_ID: ${{ vars.DATABASE_ID }}
   NOTION_API_SECRET: ${{ vars.NOTION_API_SECRET }}
   PUBLIC_GA_TRACKING_ID: ${{ vars.PUBLIC_GA_TRACKING_ID }}
