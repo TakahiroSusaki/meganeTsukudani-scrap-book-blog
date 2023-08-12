@@ -1,0 +1,40 @@
+---
+import { PRIVACY_POLICY_ID } from '../server-constants.ts'
+import {
+  getRankedPosts,
+  getAllTags,
+  getAllBlocksByBlockId
+} from '../lib/notion/client.ts'
+import Layout from '../layouts/Layout.astro'
+import NotionBlocks from '../components/NotionBlocks.astro'
+import BlogPostsLink from '../components/BlogPostsLink.astro'
+import BlogTagsLink from '../components/BlogTagsLink.astro'
+import styles from '../styles/blog.module.css'
+
+const [rankedPosts, tags, blocks] = await Promise.all([
+  getRankedPosts(),
+  getAllTags(),
+  getAllBlocksByBlockId(PRIVACY_POLICY_ID),
+])
+---
+
+<Layout>
+  <div slot="main">
+    <NotionBlocks blocks={blocks}/>
+  </div>
+
+  <div slot="aside" class={styles.aside}>
+    <BlogPostsLink heading="Recommended" posts={rankedPosts} />
+    <BlogTagsLink heading="Categories" tags={tags} />
+
+    <div class="aside-common-link">
+      <a href="/privacy-policy">プライバシーポリシー<br />(Privacy Policy)</a>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .post-excerpt {
+    width: 100px;
+  }
+</style>

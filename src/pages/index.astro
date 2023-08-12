@@ -56,6 +56,10 @@ const [posts, rankedPosts, tags, numberOfPages] = await Promise.all([
   <div slot="aside" class={styles.aside}>
     <BlogPostsLink heading="Recommended" posts={rankedPosts} />
     <BlogTagsLink heading="Categories" tags={tags} />
+
+    <div class="aside-common-link">
+      <a href="/privacy-policy">プライバシーポリシー<br />(Privacy Policy)</a>
+    </div>
   </div>
 </Layout>
 
