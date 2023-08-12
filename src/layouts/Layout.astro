@@ -5,6 +5,7 @@ import { getNavLink, getStaticFilePath, filePath } from '../lib/blog-helpers.ts'
 import '../styles/syntax-coloring.css'
 import GoogleAnalytics from '../components/GoogleAnalytics.astro'
 import twitterSvgReference from '../images/twitter.svg';
+import emailSvgReference from '../images/email.svg';
 
 export interface Props {
   title: string
@@ -89,6 +90,9 @@ if (database.Cover) {
                 </a>
               </h1>
               <div class="sns-container">
+                <a href="mailto:egoism.traveler@gmail.com">
+                  <img class="sns-icon" src={emailSvgReference} alt="email" />
+                </a>
                 <a href="https://twitter.com/meganeTsukudani" target="_blank">
                   <img class="sns-icon" src={twitterSvgReference} alt="X" />
                 </a>
