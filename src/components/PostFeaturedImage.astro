@@ -32,7 +32,14 @@ if (post.FeaturedImage && post.FeaturedImage.Url) {
   }
   .post-featured-image img {
     display: block;
-    max-width: 100%;
-    max-height: 20rem;
+    max-width: 95%;
+    max-height: 12rem;
+  }
+
+
+  @media (max-width: 640px) {
+    .post-featured-image img {
+      margin: auto;
+    }
   }
 </style>

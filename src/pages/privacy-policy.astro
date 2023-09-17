@@ -10,6 +10,7 @@ import NotionBlocks from '../components/NotionBlocks.astro'
 import BlogPostsLink from '../components/BlogPostsLink.astro'
 import BlogTagsLink from '../components/BlogTagsLink.astro'
 import styles from '../styles/blog.module.css'
+import PatreonInfo from '../components/PatreonInfo.astro'
 
 const [rankedPosts, tags, blocks] = await Promise.all([
   getRankedPosts(),
@@ -24,6 +25,7 @@ const [rankedPosts, tags, blocks] = await Promise.all([
   </div>
 
   <div slot="aside" class={styles.aside}>
+    <PatreonInfo />
     <BlogPostsLink heading="Recommended" posts={rankedPosts} />
     <BlogTagsLink heading="Categories" tags={tags} />
 

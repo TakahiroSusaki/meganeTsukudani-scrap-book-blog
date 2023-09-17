@@ -25,6 +25,7 @@ import PostRelativeLink from '../../components/PostRelativeLink.astro'
 import BlogPostsLink from '../../components/BlogPostsLink.astro'
 import BlogTagsLink from '../../components/BlogTagsLink.astro'
 import styles from '../../styles/blog.module.css'
+import PatreonInfo from '../../components/PatreonInfo.astro'
 
 export async function getStaticPaths() {
   const posts = await getAllPosts()
@@ -114,6 +115,7 @@ if (post.FeaturedImage && post.FeaturedImage.Url) {
   </div>
 
   <div slot="aside" class="aside">
+    <PatreonInfo />
     <BlogPostsLink
       heading="Posts in the same category"
       posts={postsHavingSameTag.filter(
@@ -129,5 +131,14 @@ if (post.FeaturedImage && post.FeaturedImage.Url) {
 <style>
   .articlepage-post {
     width: 100%;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #ffffffb3;
+  }
+
+  @media screen and (min-width: 768px) {
+    .articlepage-post {
+      margin: 5px 10px;
+    }
   }
 </style>
