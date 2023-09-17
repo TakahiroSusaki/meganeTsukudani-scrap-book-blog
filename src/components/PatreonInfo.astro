@@ -1,7 +1,11 @@
+---
+import { getStaticFilePath } from '../lib/blog-helpers'
+---
+
 <div class="patreon-info">
   <a class="patreon-img-link-block" href="https://www.patreon.com/mt_aiphotoproj" target="_blank">
-    <img class="phead" src="/src/images/patreon-logo.jpg" alt="">
-    <img class="phead" src="/src/images/phead.jpg" alt="">
+    <img class="phead" src={getStaticFilePath("/src/images/patreon-logo.jpg")} alt="">
+    <img class="phead" src={getStaticFilePath("/src/images/phead.jpg")} alt="">
   </a>
   <div class="patreon-info-text">Sexy street photo is available on Patreon. It encourages us in our daily activities. Please support us.</div>
   <div style="margin-top: 5px;" class="patreon-info-text">PatreonにてSexy Street Photoを公開しております。日々の活動の励みになります。是非ご支援ください。</div>
