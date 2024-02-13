@@ -1,10 +1,9 @@
 name: Deploy
 
 on:
+  schedule:
+   - cron: '5 20 * * *' # 05:05 JST
   workflow_dispatch:
-  #schedule:
-  # - cron: '5 20 * * *' # 05:05 JST
-  #workflow_dispatch:
 
 env:
   CUSTOM_DOMAIN: ${{ vars.CUSTOM_DOMAIN }}
@@ -13,6 +12,7 @@ env:
   PUBLIC_GA_TRACKING_ID: ${{ vars.PUBLIC_GA_TRACKING_ID }}
   ENABLE_LIGHTBOX: ${{ vars.ENABLE_LIGHTBOX }}
   PRIVACY_POLICY_ID: ${{ vars.PRIVACY_POLICY_ID }}
+  NX_CLOUD_ACCESS_TOKEN: ${{ vars.NX_CLOUD_ACCESS_TOKEN }}
 
 jobs:
   curl:
