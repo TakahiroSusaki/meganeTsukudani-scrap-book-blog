@@ -6,6 +6,8 @@ import '../styles/syntax-coloring.css'
 import GoogleAnalytics from '../components/GoogleAnalytics.astro'
 import twitterSvgReference from '../images/twitter.svg';
 import emailSvgReference from '../images/email.svg';
+import SearchModal from '../components/SearchModal.astro'
+import SearchButton from '../components/SearchButton.astro'
 
 export interface Props {
   title: string
@@ -111,7 +113,7 @@ if (database.Cover) {
                 当サイト内に掲載されている画像の無断利用・無断転載を禁じます。
               </div>
               <div>
-                <span>Powered by</span>
+                <span>Powered by&nbsp;</span>
                 <a href="https://github.com/otoyo/astro-notion-blog"
                   >astro-notion-blog</a
                 >
@@ -121,11 +123,13 @@ if (database.Cover) {
         </main>
 
         <aside>
+          <SearchButton />
           <slot name="aside" />
         </aside>
       </div>
     </div>
 
+    <SearchModal />
     {
       ENABLE_LIGHTBOX && (
         <script src={getStaticFilePath('/scripts/fslightbox.js')} />
